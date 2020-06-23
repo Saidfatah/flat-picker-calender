@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>flat Picker</title>
+</head>
+<body>
+    <div class="flatPicker">
+        <div class="flatPicker__months">
+            <span class="flatPicker__prev_month">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg>
+            </span>
+            <div class="flatPicker__month">
+                <div class="flatPicker__current_month">
+                    <select class="flatpickr__monthDropdown" >
+                        <option class="flatpickr__monthDropdown__option" value="0"  >January   </option>
+                        <option class="flatpickr__monthDropdown__option" value="1"  >February  </option>
+                        <option class="flatpickr__monthDropdown__option"  value="2"  >March     </option>
+                        <option class="flatpickr__monthDropdown__option" value="3"  >April     </option>
+                        <option class="flatpickr__monthDropdown__option" value="4"  >May       </option>
+                        <option class="flatpickr__monthDropdown__option" value="5" selected >June      </option>
+                        <option class="flatpickr__monthDropdown__option" value="6"  >July      </option>
+                        <option class="flatpickr__monthDropdown__option" value="7"  >August    </option>
+                        <option class="flatpickr__monthDropdown__option" value="8"  >September </option>
+                        <option class="flatpickr__monthDropdown__option" value="9"  >October   </option>
+                        <option class="flatpickr__monthDropdown__option" value="10" >November  </option>
+                        <option class="flatpickr__monthDropdown__option" value="11" >December  </option>
+                    </select>
+                    <div class="numInputWrapper">
+                        <input class="numInput cur-year" type="number" value="2020" tabindex="-1" aria-label="Year">
+                        <span class="arrowUp"></span>
+                        <span class="arrowDown"></span>
+                    </div>
+                </div>
+            </div>
+            <span class="flatPicker__next_month">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg>
+            </span>
+        </div>
+         <div class="flatPicker__inner">
+             <div class="flatPicker__weekdays">
+                 <span class="weekday">Sun</span>
+                 <span class="weekday">Mon</span>
+                 <span class="weekday">Tus</span>
+                 <span class="weekday">Wed</span>
+                 <span class="weekday">Thu</span>
+                 <span class="weekday">Fri</span>
+                 <span class="weekday">Sat</span>
+             </div>
+             <div class="flatPicker__days">
+                   <div class="flatPicker__daysContainer">
+                       <span class="flatPicker__day">1</span>
+                       <span class="flatPicker__day">1</span>
+                       <span class="flatPicker__day">1</span>
+                       <span class="flatPicker__day">1</span>
+                       <span class="flatPicker__day">1</span>
+                       <span class="flatPicker__day">1</span>
+                       <span class="flatPicker__day">1</span>
+                   </div>
+             </div>
+         </div>
+    </div>
+    <script src="flatPicker.js"></script>
+</body>
+</html>
