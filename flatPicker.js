@@ -3,19 +3,18 @@ const next_month    = document.querySelector('.flatPicker__next_month')
 const prev_month    = document.querySelector('.flatPicker__prev_month')
 const monthDropdown = document.querySelector('.flatpickr__monthDropdown')
 const yearInput     = document.querySelector('.numInput')
-
 const monthNames    = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
-const {log}         = console
-let currentMonth    = new Date().getMonth() 
-let currentDay      = new Date().getDate() 
-let currentYear     =  2020
-let selectedDate    = ''
-let selectedDateRef =null
-let prevSelectedDateRefId =''
+const {log}                = console
+let currentMonth           = new Date().getMonth() 
+let currentDay             = new Date().getDate() 
+let currentYear            = new Date().getFullYear()
 const currentMonthFixed    = new Date().getMonth() 
+const currentYearFixed     = new Date().getFullYear() 
+let selectedDate           = ''
+let selectedDateRef        =null
+let prevSelectedDateRefId  =''
 let prevMotnhDaysCount     = 0
 let currrentMotnhDaysCount = 0
-
 //lower level functions
 const createDay         = (day,month,id,OptionalClass)=> {
     const date=monthNames[month] +' '+ day + ','+currentYear
@@ -43,7 +42,7 @@ const elem              =selector => document.querySelector(selector)
     let days = []
     currrentMotnhDaysCount = monthNumberOfDays()
     for (let index = 0; index < currrentMotnhDaysCount ; index++) {
-        const day = createDay(index +1,currentMonth,'c'+(index +1),(currentDay==index+1 && currentMonthFixed == currentMonth)?'today':'')
+        const day = createDay(index +1,currentMonth,'c'+(index +1), (currentDay==index+1 && currentMonthFixed == currentMonth && currentYear ==currentYearFixed)?'today':'')
         var createdDate = stringBettwen('area_labe="',11,'"',day) //this might return June 29,2020 for example 
         log(createdDate == selectedDate)
         if(createdDate == selectedDate){
@@ -117,7 +116,7 @@ const pickDate=e=>{
     {
         if(prevSelectedDateRefId != '') selectedDateRef=elem('#'+prevSelectedDateRefId)
         prevSelectedDateRefId =''
-        
+
         selectedDate =e.target.getAttribute('area_labe')
         if(selectedDateRef != null)selectedDateRef.classList.remove('selected')
         selectedDateRef    = e.target
