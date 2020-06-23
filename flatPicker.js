@@ -10,6 +10,7 @@ let currentMonth    = new Date().getMonth()
 let currentDay      = new Date().getDate() 
 let currentYear     =  2020
 let selectedDate    = ''
+let selectedDateRef =null
 const currentMonthFixed    = new Date().getMonth() 
 let prevMotnhDaysCount     = 0
 let currrentMotnhDaysCount = 0
@@ -17,8 +18,6 @@ let currrentMotnhDaysCount = 0
 //lower level functions
 const createDay         = (day,month,OptionalClass)=> {
     const date=monthNames[month] +' '+ day + ','+currentYear
-    if(selectedDate === date)
-    log({selectedDate,date})
     return `<span class="flatPicker__day  ${OptionalClass +' '+( selectedDate === date?'selected':'') } " area_labe="${date}">${day}</span>`
 }
 const appendDays        =(days)=> days.forEach(day => {daysContainer.innerHTML += day})
@@ -103,7 +102,11 @@ const pickDate=e=>{
     if(e.target.classList.contains('flatPicker__day') )
     {
         selectedDate =e.target.getAttribute('area_labe')
+
+        if(selectedDateRef != null) selectedDateRef.classList.remove('selected')
+        selectedDateRef    = e.target
         e.target.classList.add('selected')
+  
     } 
         
 }
